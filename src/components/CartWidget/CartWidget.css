@@ -1,0 +1,19 @@
+.cart{
+    margin-right: 4rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+    z-index: 1;
+}
+
+.cartCounter{
+    position: absolute;
+    margin-left: 1.5rem;
+    top: -7px;
+    cursor: default;
+    background-color: black;
+    border-radius: 100%;
+    border: 2px solid white;
+    padding: .1rem .6rem;
+    font-weight: bolder;
+}

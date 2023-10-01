@@ -1,0 +1,26 @@
+header{
+    background-color: #f94707;
+    border-bottom: 3px solid white;
+    height: 4.5rem;
+}
+
+.navbar{
+    background-color: #f94707 !important;
+}
+
+p {
+    margin-top: 10px;
+    color: white !important;
+    cursor: pointer;
+}
+
+li {
+    margin-top: 10px;
+    font-weight: bolder !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+.brandImg {
+    width: 15rem;
+}
