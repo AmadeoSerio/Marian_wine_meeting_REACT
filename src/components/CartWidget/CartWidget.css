@@ -2,18 +2,19 @@
     margin-right: 4rem;
     font-size: 2rem;
     cursor: pointer;
-    color: black;
+    color: #ffff;
     z-index: 1;
 }
 
 .cartCounter{
+    color: #ffff;
     position: absolute;
-    margin-left: 1.5rem;
-    top: -7px;
+    margin-left: 1.8rem;
+    top: 4px;
     cursor: default;
     background-color: black;
     border-radius: 100%;
-    border: 2px solid white;
-    padding: .1rem .6rem;
+    border: 2px solid #ffff;
+    padding: .08rem .6rem;
     font-weight: bolder;
 }

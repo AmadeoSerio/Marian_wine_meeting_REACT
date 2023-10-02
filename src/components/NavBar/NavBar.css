@@ -1,6 +1,6 @@
 header{
     background-color: #f94707;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid #ffff;
     height: 4.5rem;
 }
 
@@ -8,16 +8,16 @@ header{
     background-color: #f94707 !important;
 }
 
-p {
+.navText {
     margin-top: 10px;
-    color: white !important;
+    color: #ffff !important;
     cursor: pointer;
 }
 
-li {
+.navTextLi {
     margin-top: 10px;
     font-weight: bolder !important;
-    color: white !important;
+    color: #ffff !important;
     cursor: pointer;
 }
 

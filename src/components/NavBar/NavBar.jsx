@@ -14,11 +14,11 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <p className="nav-link active" aria-current="page">Inicio</p>
+                            <p className="navText nav-link active" aria-current="page">Inicio</p>
                             <ul className='d-flex'>
-                                <li className="nav-link active">Malbec</li>
-                                <li className="nav-link active">Syrah</li>
-                                <li className="nav-link active">Cabernet</li>
+                                <li className="navTextLi nav-link active">Malbec</li>
+                                <li className="navTextLi nav-link active">Syrah</li>
+                                <li className="navTextLi nav-link active">Cabernet</li>
                             </ul>
                         </div>
                     </div>
