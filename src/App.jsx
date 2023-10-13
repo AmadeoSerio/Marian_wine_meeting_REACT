@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
-import Navbar from './components/NavBar/Navbar.jsx'
+import NavBar from './components/NavBar/NavBar'
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
 
-  <Navbar/>
+  <NavBar/>
   <ItemListContainer greeting = "Venta de vinos y destilados"/>
 
     </>
