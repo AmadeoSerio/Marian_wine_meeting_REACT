@@ -12,7 +12,8 @@
     width: 12rem;
     object-fit: contain;
     justify-self: center;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
 }
 
 .cardProducto button {
