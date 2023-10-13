@@ -1,32 +1,36 @@
-import React from 'react';
-import './NavBar.css';
-import CartWidget from '../CartWidget/CartWidget.jsx';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import CartWidget from '../CartWidget/CartWidget';
+import './NavBar.css'
 
-const Navbar = () => {
-    const brand = "https://lh3.googleusercontent.com/drive-viewer/AK7aPaB3Unti0Ph9mSZtLQO7lfuhGPKGD97V3aBZTgENHQZnA3vM_XrE4JSzL2UhgXOTPDq9Rtbuxn5Ruj08NiAwW7q-_5ix=s1600"
-    return (
-        <header className='d-flex justify-content-between'>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid">
-                    <img className='brandImg' src={brand} alt="imagen con el nombre wine meeting y su logo" />
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <p className="navText nav-link active" aria-current="page">Inicio</p>
-                            <ul className='d-flex'>
-                                <li className="navTextLi nav-link active">Malbec</li>
-                                <li className="navTextLi nav-link active">Syrah</li>
-                                <li className="navTextLi nav-link active">Cabernet</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <CartWidget/>
-        </header>
-    )
+
+function BasicExample() {
+  return (
+    <Navbar expand="lg" fixed="top">
+      <Container>
+      <Navbar.Brand href="#home">
+            <img
+              src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaD-yjOboDsBc6QSyZOvklscK-TwjJJI0DohTqcThzs68V1bPZyNa9my31gFUPbHivanFK4vP4dauaWljYFv0qBkcz8x=s1600"
+              className="imgBrand"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home" className='navLinkHome'>Inicio</Nav.Link>
+            <Nav.Link href="#link" className='navLink'>Malbec</Nav.Link>
+            <Nav.Link href="#link" className='navLink'>Syrah</Nav.Link>
+            <Nav.Link href="#link" className='navLink'>Cabernet</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        
+        <CartWidget/>
+
+      </Container>
+    </Navbar>
+  );
 }
 
-export default Navbar
+export default BasicExample;

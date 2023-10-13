@@ -1,26 +1,35 @@
-header{
+.navbar{
     background-color: #f94707;
-    border-bottom: 3px solid #ffff;
+    border-bottom: white solid .2rem;
     height: 4.5rem;
 }
 
-.navbar{
-    background-color: #f94707 !important;
+.navLinkHome{
+    color: white !important;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-right: 3rem !important;
+    margin-left: -1rem;
+    transition: .5s !important;
+    padding: 1rem 1rem !important;
 }
 
-.navText {
-    margin-top: 10px;
-    color: #ffff !important;
-    cursor: pointer;
+.navLinkHome:hover{
+    background-color: #ff865a;
 }
 
-.navTextLi {
-    margin-top: 10px;
-    font-weight: bolder !important;
-    color: #ffff !important;
-    cursor: pointer;
+.navLink:hover{
+    background-color: #ff865a;
 }
 
-.brandImg {
-    width: 15rem;
+.navLink{
+    color: white !important;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    transition: .5s !important;
+    padding: 1rem 1rem !important;
+}
+
+.imgBrand{
+    height: 7rem;
 }
