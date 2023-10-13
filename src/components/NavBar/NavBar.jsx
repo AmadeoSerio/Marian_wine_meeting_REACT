@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import CartWidget from '../CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget.jsx';
 
 const Navbar = () => {
     const brand = "https://lh3.googleusercontent.com/drive-viewer/AK7aPaB3Unti0Ph9mSZtLQO7lfuhGPKGD97V3aBZTgENHQZnA3vM_XrE4JSzL2UhgXOTPDq9Rtbuxn5Ruj08NiAwW7q-_5ix=s1600"
