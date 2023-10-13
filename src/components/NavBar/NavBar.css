@@ -1,6 +1,5 @@
 .navbar{
     background-color: #f94707;
-    border-bottom: white solid .2rem;
     height: 4.5rem;
 }
 
@@ -8,8 +7,7 @@
     color: white !important;
     font-size: 1.2rem;
     font-weight: bolder;
-    margin-right: 3rem !important;
-    margin-left: -1rem;
+    margin-right: 1rem !important;
     transition: .5s !important;
     padding: 1rem 1rem !important;
 }
@@ -31,5 +29,5 @@
 }
 
 .imgBrand{
-    height: 7rem;
+    height: 3rem;
 }

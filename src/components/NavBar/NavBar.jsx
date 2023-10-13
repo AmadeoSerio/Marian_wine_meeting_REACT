@@ -11,7 +11,7 @@ function BasicExample() {
       <Container>
       <Navbar.Brand href="#home">
             <img
-              src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaD-yjOboDsBc6QSyZOvklscK-TwjJJI0DohTqcThzs68V1bPZyNa9my31gFUPbHivanFK4vP4dauaWljYFv0qBkcz8x=s1600"
+              src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBvY0aFgaqi6shl73EZi6Hz5TCMmvk-9rA08NjK2ABl_AlJQHvaB--fiUeik6tdRvkKQ4TQvycHciqxyWpCBB4fmpCFsg=s2560"
               className="imgBrand"
               alt="React Bootstrap logo"
             />

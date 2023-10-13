@@ -1,0 +1,38 @@
+.cardProducto {
+    background-color: #fdc5c6;
+    width: 18rem;
+    display: grid;
+    padding: 1rem;
+    height: 40rem;
+    border: solid .5rem #ffff;
+    border-radius: 2%;
+}
+
+.cardProducto img {
+    width: 12rem;
+    object-fit: contain;
+    justify-self: center;
+    padding-bottom: 1rem;
+}
+
+.cardProducto button {
+    border: none;
+    height: 2rem;
+    background-color: #481f4f;
+    border-radius: 1rem;
+    color: #ffff;
+}
+
+.cardProducto h5 {
+    height: 3rem;
+    color: #481f4f;
+    font-weight: bolder;
+}
+
+.cardProducto h6 {
+    color: #481f4f;
+}
+
+.cardProducto p {
+    color: #481f4f;
+}

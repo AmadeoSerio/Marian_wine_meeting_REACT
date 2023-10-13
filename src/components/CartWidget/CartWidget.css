@@ -1,4 +1,4 @@
-.cart{
+.cart {
     margin-right: 2.3rem;
     font-size: 2rem;
     cursor: pointer;
@@ -6,7 +6,7 @@
     z-index: 1;
 }
 
-.cartCounter{
+.cartCounter {
     color: #ffff;
     position: absolute;
     margin-left: 1.8rem;

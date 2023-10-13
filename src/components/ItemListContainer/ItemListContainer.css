@@ -1,15 +1,21 @@
 .greeting {
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     margin-top: 5rem;
 }
 
-.tituloGreeting{
+.greeting img {
+    height: 25rem;
+    object-fit: contain;
+}
+
+.tituloGreeting {
     color: #fdc5c6;
     align-self: center;
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     font-size: 2.7em;
     font-weight: bolder;
-    
+
 }
