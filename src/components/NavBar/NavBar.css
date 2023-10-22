@@ -4,12 +4,14 @@
 }
 
 .navLinkHome{
-    color: white !important;
+    color: white;
     font-size: 1.2rem;
     font-weight: bolder;
-    margin-right: 1rem !important;
-    transition: .5s !important;
-    padding: 1rem 1rem !important;
+    margin-right: 1rem;
+    margin-left: 2rem;
+    transition: .5s;
+    padding: 1rem 1rem;
+    text-decoration: none;
 }
 
 .navLinkHome:hover{
@@ -21,11 +23,12 @@
 }
 
 .navLink{
-    color: white !important;
+    color: white ;
     font-size: 1.2rem;
     font-weight: bolder;
-    transition: .5s !important;
-    padding: 1rem 1rem !important;
+    transition: .5s;
+    padding: 1rem 1rem;
+    text-decoration: none;
 }
 
 .imgBrand{

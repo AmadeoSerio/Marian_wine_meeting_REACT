@@ -6,7 +6,7 @@
 }
 
 .greeting img {
-    height: 25rem;
+    height: 20rem;
     object-fit: contain;
 }
 
@@ -15,7 +15,8 @@
     align-self: center;
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bolder;
     letter-spacing: .5rem;
+    margin-bottom: -1rem;
 }

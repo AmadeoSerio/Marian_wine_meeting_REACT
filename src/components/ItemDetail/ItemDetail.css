@@ -1,0 +1,40 @@
+.itemStyle {
+    display: flex;
+    gap: 2rem;
+    background-color: #fdc5c6;
+    width: 50rem;
+    padding: 1rem;
+    border: solid .5rem #ffff;
+    border-radius: 1rem;
+    padding: 5rem;
+    margin: 2rem;
+}
+
+.itemStyle img {
+    border-radius: 1rem;
+    height: 32rem;
+    object-fit: contain;
+    margin-left: 1rem;
+}
+
+.itemDetail h2 {
+    width: 100%;
+    color: #481f4f;
+    font-weight: bolder;
+}
+
+.itemDetail h3 {
+    color: #481f4f;
+    font-size: 1.4rem;
+}
+
+.itemDetail h4 {
+    color: #481f4f;
+    font-weight: bolder;
+}
+
+.itemDetail h5 {
+    color: #481f4f;
+    font-weight: 400;
+}
+
