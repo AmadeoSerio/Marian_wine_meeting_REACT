@@ -1,6 +1,16 @@
-import './ItemDetail.css'
+import { useState } from 'react';
+import Counter from '../Counter/Counter';
+import { Link } from 'react-router-dom';
+import './ItemDetail.css';
 
-const ItemDetail = ({ id, nombre, precio, varietal, img, descripcion }) => {
+const ItemDetail = ({ id, stock, nombre, precio, varietal, img, descripcion }) => {
+    const [agregarCantidad, setAgregarCantidad] = useState(0);
+
+    const manejadorCantidad = (cantidad) => {
+        setAgregarCantidad(cantidad);
+        console.log("Productos agregados: " + cantidad);
+      }
+
     return (
         <div className='itemStyle'>
             <img src={img} alt={nombre} />
@@ -10,6 +20,11 @@ const ItemDetail = ({ id, nombre, precio, varietal, img, descripcion }) => {
                 <h4> Precio: ${precio} </h4>
                 <h5> ID: {id} </h5>
                 <p>{descripcion}</p>
+            </div>
+            <div>
+                {
+                    agregarCantidad > 0 ? (<Link to="/cart" className='botonTerminarCompra'>Terminar compra</Link>) : (<Counter inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)
+                }
             </div>
         </div>
     )

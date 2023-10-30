@@ -38,3 +38,16 @@
     font-weight: 400;
 }
 
+.botonTerminarCompra {
+    margin-top: 29.3rem;
+    margin-left: -21rem;
+    display: flex;
+    background-color: #481f4f;
+    border-radius: .8rem;
+    font-weight: bolder;
+    color: #fdc5c6;
+    padding: .6rem 1rem;
+    border: none;
+    width: 10.1rem;
+    text-decoration: none;
+}

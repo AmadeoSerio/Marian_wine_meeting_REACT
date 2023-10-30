@@ -1,0 +1,39 @@
+.botones {
+    margin-top: 29.7rem;
+    margin-left: -21em;
+    display: flex;
+    gap: .8rem;
+}
+
+.botonRestar{
+    border: none;
+    background-color: transparent;
+}
+
+.botonRestar i{
+    color: #481f4f;
+    font-size: 2rem;
+}
+
+.botonSumar{
+    border: none;
+    background-color: transparent;
+}
+
+.botonSumar i{
+    color: #481f4f;
+    font-size: 2rem;
+}
+
+.contador{
+    font-size: 1.5rem;
+}
+
+.botonAgregarCarrito{
+    background-color: #481f4f;
+    border-radius: .8rem;
+    font-weight: bolder;
+    color: #fdc5c6;
+    padding: 0rem .8rem;
+    border: none;
+}
