@@ -19,9 +19,9 @@ const Counter = ({stock, inicial, funcionAgregar}) => {
 
   return (
     <div className="botones">
-        <button onClick={restarContador} className="botonRestar"> <i class="fa-solid fa-square-minus"></i> </button>
+        <button onClick={restarContador} className="botonRestar"> <i className="fa-solid fa-square-minus"></i> </button>
         <strong className="contador"> {contador} </strong>
-        <button onClick={sumarContador} className="botonSumar"> <i class="fa-solid fa-square-plus"></i> </button>
+        <button onClick={sumarContador} className="botonSumar"> <i className="fa-solid fa-square-plus"></i> </button>
     <button onClick={()=> funcionAgregar(contador)} className="botonAgregarCarrito">Agregar al carrito</button>
     </div>
   )

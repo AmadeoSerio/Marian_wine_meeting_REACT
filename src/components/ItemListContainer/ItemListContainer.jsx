@@ -6,7 +6,7 @@ import ItemList from "../ItemList/ItemList.jsx"
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
-  const img = "https://lh3.googleusercontent.com/drive-viewer/AK7aPaBAkbNWekJ9omGl22Vw9ucaKcwjftfKfRdLa3wbjNrE8xfTZw6atNFJtKEGQo55yAt6fmXDR31w9MeCRKBHuE49-zasrQ=s2560"
+  const img = "https://lh3.googleusercontent.com/drive-viewer/AK7aPaCsHlngwqGmhHWABTOgAMh0qNMEHozAcMFq-SYd8Mh8XQLEJTR51uMnBfv97AfXVQ252iYqHfW8rhj1_dT_XQz5LnqeCg=s2560"
   
   const [productos, setProductos] = useState([])
 

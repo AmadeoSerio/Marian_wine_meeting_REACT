@@ -1,12 +1,17 @@
-import React from 'react';
+import { useContext } from 'react';
+import { CarritoContext } from '../../context/CarritoContext';
+import { Link } from 'react-router-dom';
 import './CartWidget.css';
 
 const CartWidget = () => {
+  const { cantidadTotal } = useContext(CarritoContext);
   return (
-    <div className='d-flex align-items-center'>
+    <Link to="/cart">
         <i className="fa-solid fa-cart-shopping cart"></i>
-        <p className='cartCounter'> 5 </p>
-    </div>
+        {
+          cantidadTotal > 0 && <p className='cartCounter'> {cantidadTotal} </p>
+        }
+    </Link>
   )
 }
 
