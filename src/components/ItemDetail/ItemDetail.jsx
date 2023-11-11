@@ -24,7 +24,10 @@ const ItemDetail = ({ id, stock, nombre, precio, varietal, img, descripcion }) =
                 <h2> {nombre} </h2>
                 <h3> Varietal: {varietal} </h3>
                 <h4> Precio: ${precio} </h4>
+                <div className='d-flex gap-4'>
                 <h5> ID: {id} </h5>
+                <h5> STOCK: {stock} </h5>
+                </div>
                 <p>{descripcion}</p>
             </div>
             <div>

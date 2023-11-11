@@ -3,7 +3,7 @@
     width: 14rem;
     display: grid;
     padding: 1rem;
-    height: 31rem;
+    height: 33rem;
     border: solid .5rem #ffff;
     border-radius: 1rem;
 }
@@ -38,4 +38,9 @@
 .cardProducto p {
     color: #481f4f;
     font-weight: bolder;
+    height: 1rem;
+}
+
+.cardProducto .stock {
+    font-weight: 500;
 }
