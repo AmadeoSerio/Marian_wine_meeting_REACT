@@ -12,7 +12,7 @@ function BasicExample() {
       <Container>
           <Link to="/">
             <img
-              src="https://lh3.googleusercontent.com/drive-viewer/AK7aPaBvY0aFgaqi6shl73EZi6Hz5TCMmvk-9rA08NjK2ABl_AlJQHvaB--fiUeik6tdRvkKQ4TQvycHciqxyWpCBB4fmpCFsg=s2560"
+              src="http://drive.google.com/uc?export=view&id=1J0jvf0JACQ8TwjgyP_ND0b2kPlc8ioUo"
               className="imgBrand"
             />
           </Link>

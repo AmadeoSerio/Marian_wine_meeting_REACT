@@ -1,3 +1,57 @@
 .checkout{
-    margin-top: 5rem;
+    margin-top: 7rem;
+}
+
+.checkout h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.precioCheckout {
+    width: 4rem;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.listaCheckout {
+    margin-right: 5rem;
+    font-size: 1.5rem;
+}
+.totalPagar{
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    font-weight: bolder;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+}
+
+.inputForm{
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    height: 2.5rem;
+    width: 25rem;
+    color: #f96386;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border: none;
+    padding: 1rem;
+    background-color: #481f4f;
+}
+
+.botonConfirmarCompra{
+    margin-top: 2rem;
+    border-radius: 1rem;
+    height: 3rem;
+    width: 12rem;
+    font-weight: bolder;
+    border: none;
 }

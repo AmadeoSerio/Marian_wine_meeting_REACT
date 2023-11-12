@@ -6,16 +6,18 @@ import Counter from '../Counter/Counter';
 import './ItemDetail.css';
 
 const ItemDetail = ({ id, stock, nombre, precio, varietal, img, descripcion }) => {
+
+
     const [agregarCantidad, setAgregarCantidad] = useState(0);
 
-    const {agregarAlCarrito} = useContext(CarritoContext);
+    const { agregarAlCarrito } = useContext(CarritoContext);
 
     const manejadorCantidad = (cantidad) => {
         setAgregarCantidad(cantidad);
-        
-        const item = {id, nombre, varietal, precio};
+
+        const item = { id, nombre, varietal, precio, img };
         agregarAlCarrito(item, cantidad);
-      }
+    }
 
     return (
         <div className='itemStyle'>
@@ -25,14 +27,14 @@ const ItemDetail = ({ id, stock, nombre, precio, varietal, img, descripcion }) =
                 <h3> Varietal: {varietal} </h3>
                 <h4> Precio: ${precio} </h4>
                 <div className='d-flex gap-4'>
-                <h5> ID: {id} </h5>
-                <h5> STOCK: {stock} </h5>
+                    <h5> ID: {id} </h5>
+                    <h5> STOCK: {stock} </h5>
                 </div>
                 <p>{descripcion}</p>
             </div>
             <div>
                 {
-                    agregarCantidad > 0 ? (<Link to="/cart" className='botonTerminarCompra'>Terminar compra</Link>) : (<Counter inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)
+                    agregarCantidad > 0 ? (<div className='d-flex'> <Link to="/cart" className='botonTerminarCompra'>Terminar compra</Link> <Link to="/" className="botonSeguirComprando"> Seguir comprando </Link></div>) : (<Counter inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)
                 }
             </div>
         </div>

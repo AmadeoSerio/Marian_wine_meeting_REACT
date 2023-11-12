@@ -14,7 +14,7 @@ const Checkout = () => {
     const [error, setError] = useState("");
     const [ordenId, setOrdenID] = useState("");
 
-    const { carrito, vaciarCarrito, total, totalCantidad } = useContext(CarritoContext);
+    const { carrito, vaciarCarrito, total, } = useContext(CarritoContext);
 
 
     const manejadorFormulario = (event) => {
@@ -74,61 +74,60 @@ const Checkout = () => {
     return (
         <div className="checkout container">
             <h2>Checkout</h2>
-            <form onSubmit={manejadorFormulario}>
-                {
-                    carrito.map(producto => (
-                        <div key={producto.item.id}>
-                            <p> {producto.item.nombre} x {producto.cantidad}</p>
-                            <p> ${producto.item.precio} </p>
-                            <p> Total a pagar: ${total}</p>
-                        </div>
-                    ))
-                }
-
+            <form onSubmit={manejadorFormulario} className="d-flex justify-content-between">
                 <div>
+                    <hr />
+                    {
+                        carrito.map(producto => (
+                            <div key={producto.item.id} className="d-flex gap-5">
+                                <p className="precioCheckout"> ${producto.item.precio * producto.cantidad} </p>
+                                <p className="listaCheckout"> {producto.item.nombre} x {producto.cantidad}</p>
+                            </div>
+                        ))
+                    }
+
+                    <hr />
+                    {
+                        <p className="totalPagar">${total} : Total a pagar</p>
+                    }
+                </div>
+
+                <div className="formulario">
                     <label htmlFor="">Nombre</label>
-                    <input type="text" onChange={(e) => setNombre(e.target.value)} />
-                </div>
+                    <input className="inputForm" type="text" onChange={(e) => setNombre(e.target.value)} />
 
-                <div>
                     <label htmlFor="">Apellido</label>
-                    <input type="text" onChange={(e) => setApellido(e.target.value)} />
-                </div>
+                    <input className="inputForm" type="text" onChange={(e) => setApellido(e.target.value)} />
 
-                <div>
                     <label htmlFor="">Celular</label>
-                    <input type="text" onChange={(e) => setTelefono(e.target.value)} />
-                </div>
+                    <input className="inputForm" type="text" onChange={(e) => setTelefono(e.target.value)} />
 
-                <div>
                     <label htmlFor="">Email</label>
-                    <input type="email" onChange={(e) => setEmail(e.target.value)} />
-                </div>
+                    <input className="inputForm" type="email" onChange={(e) => setEmail(e.target.value)} />
 
-                <div>
                     <label htmlFor="">Confirmar Email</label>
-                    <input type="email" onChange={(e) => setEmailConfirmacion(e.target.value)} />
+                    <input className="inputForm" type="email" onChange={(e) => setEmailConfirmacion(e.target.value)} />
+
+                    {
+                        error && <p> {error} </p> /////////////////////////TENGO QUE AGREGARLE ESTILO TAMBIEN
+
+                    }
+
+
+
+
+                    <button type="submit" className="botonConfirmarCompra">Confirmar compra</button>
+                    {/* DEBERÍA REDIRECCIONAR AL COMPRADOR AL INICIO */}
+
+
+
+
+                    {
+                        ordenId && (
+                            <strong>!Gracias por tu compra¡ Tu número de orden es: {ordenId}</strong> //////ACA PUEDE IR UN SWEET ALERT
+                        )
+                    }
                 </div>
-
-                {
-                    error && <p> {error} </p> /////////////////////////TENGO QUE AGREGARLE ESTILO TAMBIEN
-
-                }
-
-
-
-
-                <button type="submit">Confirmar compra</button>
-                {/* DEBERÍA REDIRECCIONAR AL COMPRADOR AL INICIO */}
-
-
-
-
-                {
-                    ordenId && (
-                        <strong>!Gracias por tu compra¡ Tu número de orden es: {ordenId}</strong> //////ACA PUEDE IR UN SWEET ALERT
-                    )
-                }
             </form>
         </div>
     )

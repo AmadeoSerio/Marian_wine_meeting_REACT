@@ -8,7 +8,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
-  const img = "https://lh3.googleusercontent.com/drive-viewer/AK7aPaCsHlngwqGmhHWABTOgAMh0qNMEHozAcMFq-SYd8Mh8XQLEJTR51uMnBfv97AfXVQ252iYqHfW8rhj1_dT_XQz5LnqeCg=s2560"
+  const img = "http://drive.google.com/uc?export=view&id=1ipeT161_1BPgyOdxuGi1M3vfFW6x6TR9"
 
   const [productos, setProductos] = useState([])
 
@@ -27,14 +27,6 @@ const ItemListContainer = ({ greeting }) => {
     })
     .catch (error => console.log(error));///////////////////////////////////////////OJO ACÁ
   }, [varietalCategoria])
-
-  // useEffect(() => {
-  //   const funcionProductos = varietalCategoria ? getVarietal : getProductos;
-  //   funcionProductos(varietalCategoria)
-  //     .then(respuesta => setProductos(respuesta))
-  //     .catch(error => console.log(error))
-
-  // }, [varietalCategoria])
 
   return (
     <>
