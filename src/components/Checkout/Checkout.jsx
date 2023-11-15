@@ -2,10 +2,12 @@ import { useState, useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext";
 import { db } from "../../services/config";
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore";
+import Swal from 'sweetalert2'
 import "./Checkout.css"
 
 
 const Checkout = () => {
+
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
     const [telefono, setTelefono] = useState("");
@@ -16,17 +18,64 @@ const Checkout = () => {
 
     const { carrito, vaciarCarrito, total, } = useContext(CarritoContext);
 
+    //Alertas del sweetAlert
+    const alertaOrden = () => (Swal.fire({
+            title: '¡Gracias por comprar! Tu número de orden es: ',
+            html: `` + ordenId,
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Volver al inicio',
+            background: "#f94707",
+            color: "#eeee",
+            confirmButtonColor: "#05121b",
+        }).then((result) => {
+            if (result.isConfirmed) 
+            window.location = "/";
+        }
+        ))
+
+        const alertaCampos = (event) => {(Swal.fire({
+            title: 'Por favor completa todos los campos para continuar',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Entendido',
+            background: "#f94707",
+            color: "#eeee",
+            confirmButtonColor: "#05121b",
+        })); event.preventDefault()}
+
+        const alertaMail = (event) => {(Swal.fire({
+            title: 'Los emails ingresados no coinciden',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Entendido',
+            background: "#f94707",
+            color: "#eeee",
+            confirmButtonColor: "#05121b",
+        })); event.preventDefault()}
+
+        const alertaError = (event) => {(Swal.fire({
+            title: 'Los emails ingresados no coinciden',
+            html: `` + error,
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Entendido',
+            background: "#721414",
+            color: "#eeee",
+            confirmButtonColor: "#05121b",
+        })); event.preventDefault()}
+
 
     const manejadorFormulario = (event) => {
         event.preventDefault();
 
         if (!nombre || !apellido || !telefono || !email || !emailConfirmaicon) {
-            setError("Por favor completa todos los campos para continuar") ////////OTRO SWEET ALERT
+            setError( alertaCampos() )
             return;
         }
 
         if (email !== emailConfirmaicon) {
-            setError("Los emails ingresados no coinciden"); /////////OTRO SWEET ALERT
+            setError( alertaMail() );
             return;
         }
 
@@ -109,23 +158,13 @@ const Checkout = () => {
                     <input className="inputForm" type="email" onChange={(e) => setEmailConfirmacion(e.target.value)} />
 
                     {
-                        error && <p> {error} </p> /////////////////////////TENGO QUE AGREGARLE ESTILO TAMBIEN
-
+                        error && ( alertaError() )
                     }
 
-
-
-
                     <button type="submit" className="botonConfirmarCompra">Confirmar compra</button>
-                    {/* DEBERÍA REDIRECCIONAR AL COMPRADOR AL INICIO */}
-
-
-
-
+                    
                     {
-                        ordenId && (
-                            <strong>!Gracias por tu compra¡ Tu número de orden es: {ordenId}</strong> //////ACA PUEDE IR UN SWEET ALERT
-                        )
+                        ordenId && ( alertaOrden() )
                     }
                 </div>
             </form>
