@@ -19,7 +19,8 @@ const Checkout = () => {
     const { carrito, vaciarCarrito, total, } = useContext(CarritoContext);
 
     //Alertas del sweetAlert
-    const alertaOrden = () => (Swal.fire({
+    const alertaOrden = () => {
+        (Swal.fire({
             title: '¡Gracias por comprar! Tu número de orden es: ',
             html: `` + ordenId,
             showCancelButton: false,
@@ -28,13 +29,16 @@ const Checkout = () => {
             background: "#f94707",
             color: "#eeee",
             confirmButtonColor: "#05121b",
+            allowOutsideClick: false,
         }).then((result) => {
-            if (result.isConfirmed) 
-            window.location = "/";
-        }
-        ))
+            if (result.isConfirmed) {
+                window.location = "/";
+            }
+        }))
+    };
 
-        const alertaCampos = (event) => {(Swal.fire({
+    const alertaCampos = () => {
+        (Swal.fire({
             title: 'Por favor completa todos los campos para continuar',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
@@ -42,9 +46,11 @@ const Checkout = () => {
             background: "#f94707",
             color: "#eeee",
             confirmButtonColor: "#05121b",
-        })); event.preventDefault()}
+        }));
+    };
 
-        const alertaMail = (event) => {(Swal.fire({
+    const alertaMail = () => {
+        (Swal.fire({
             title: 'Los emails ingresados no coinciden',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
@@ -52,9 +58,11 @@ const Checkout = () => {
             background: "#f94707",
             color: "#eeee",
             confirmButtonColor: "#05121b",
-        })); event.preventDefault()}
+        }));
+    };
 
-        const alertaError = (event) => {(Swal.fire({
+    const alertaError = () => {
+        (Swal.fire({
             title: 'Los emails ingresados no coinciden',
             html: `` + error,
             showCancelButton: false,
@@ -63,19 +71,20 @@ const Checkout = () => {
             background: "#721414",
             color: "#eeee",
             confirmButtonColor: "#05121b",
-        })); event.preventDefault()}
+        }));
+    };
 
 
     const manejadorFormulario = (event) => {
         event.preventDefault();
 
         if (!nombre || !apellido || !telefono || !email || !emailConfirmaicon) {
-            setError( alertaCampos() )
+            setError(alertaCampos())
             return;
         }
 
         if (email !== emailConfirmaicon) {
-            setError( alertaMail() );
+            setError(alertaMail());
             return;
         }
 
@@ -114,8 +123,7 @@ const Checkout = () => {
                     .catch(error => setError("Se produjo un error al crear la orden", error))
             })
             .catch((error) => {
-                console.log("No se pudo actualizar el stock", error);
-                setError("No se pudo actualizar el stock")
+                setError("No se pudo actualizar el stock", error)
             })
 
     }
@@ -125,12 +133,13 @@ const Checkout = () => {
             <h2>Checkout</h2>
             <form onSubmit={manejadorFormulario} className="d-flex justify-content-between">
                 <div>
+                    <h3 className="tituloLista">Lista de productos:</h3>
                     <hr />
                     {
                         carrito.map(producto => (
                             <div key={producto.item.id} className="d-flex gap-5">
                                 <p className="precioCheckout"> ${producto.item.precio * producto.cantidad} </p>
-                                <p className="listaCheckout"> {producto.item.nombre} x {producto.cantidad}</p>
+                                <p className="listaCheckout"> {producto.item.nombre} <b>x {producto.cantidad}</b></p>
                             </div>
                         ))
                     }
@@ -139,32 +148,33 @@ const Checkout = () => {
                     {
                         <p className="totalPagar">${total} : Total a pagar</p>
                     }
+                    <h4 className="completaFormulario">Completa el formulario para finalizar la compra.</h4>
                 </div>
 
                 <div className="formulario">
-                    <label htmlFor="">Nombre</label>
+                    <label>Nombre</label>
                     <input className="inputForm" type="text" onChange={(e) => setNombre(e.target.value)} />
 
-                    <label htmlFor="">Apellido</label>
+                    <label>Apellido</label>
                     <input className="inputForm" type="text" onChange={(e) => setApellido(e.target.value)} />
 
-                    <label htmlFor="">Celular</label>
+                    <label>Celular</label>
                     <input className="inputForm" type="text" onChange={(e) => setTelefono(e.target.value)} />
 
-                    <label htmlFor="">Email</label>
+                    <label>Email</label>
                     <input className="inputForm" type="email" onChange={(e) => setEmail(e.target.value)} />
 
-                    <label htmlFor="">Confirmar Email</label>
+                    <label>Confirmar Email</label>
                     <input className="inputForm" type="email" onChange={(e) => setEmailConfirmacion(e.target.value)} />
 
                     {
-                        error && ( alertaError() )
+                        error && (alertaError())
                     }
 
                     <button type="submit" className="botonConfirmarCompra">Confirmar compra</button>
-                    
+
                     {
-                        ordenId && ( alertaOrden() )
+                        ordenId && (alertaOrden())
                     }
                 </div>
             </form>

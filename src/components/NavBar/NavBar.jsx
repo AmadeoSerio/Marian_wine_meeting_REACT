@@ -10,12 +10,12 @@ function BasicExample() {
   return (
     <Navbar expand="lg" fixed="top">
       <Container>
-          <Link to="/">
-            <img
-              src="http://drive.google.com/uc?export=view&id=1J0jvf0JACQ8TwjgyP_ND0b2kPlc8ioUo"
-              className="imgBrand"
-            />
-          </Link>
+        <Link to="/">
+          <img
+            src="http://drive.google.com/uc?export=view&id=1J0jvf0JACQ8TwjgyP_ND0b2kPlc8ioUo"
+            className="imgBrand"
+          />
+        </Link>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

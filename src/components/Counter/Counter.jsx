@@ -1,7 +1,25 @@
 import { useState } from "react";
+import Swal from 'sweetalert2'
 import './Counter.css';
 
 const Counter = ({ stock, inicial, funcionAgregar }) => {
+    const alertaAgregarProducto = () => {
+        (Swal.fire({
+            title: 'Agregado al carrito',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Entendido',
+            background: "#bf3300",
+            color: "#eeee",
+            allowOutsideClick: true,
+            confirmButtonColor: "#05121b",
+            toast: true,
+            position: 'top-end',
+            timer: 2000,
+            timerProgressBar: true
+        }));
+    };
+
     const [contador, setContador] = useState(inicial);
 
     const sumarContador = () => {
@@ -25,10 +43,10 @@ const Counter = ({ stock, inicial, funcionAgregar }) => {
 
             {
                 stock > 0 ? (
-                    <button onClick={() => funcionAgregar(contador)} className="botonAgregarCarrito">Agregar al carrito</button>)
-                     : <button className="botonAgregarCarrito">SIN STOCK</button>
+                    <button onClick={() => { funcionAgregar(contador); alertaAgregarProducto() }} className="botonAgregarCarrito">Agregar al carrito</button>)
+                    : <button className="botonAgregarCarrito">SIN STOCK</button>
             }
-            
+
         </div>
     )
 }

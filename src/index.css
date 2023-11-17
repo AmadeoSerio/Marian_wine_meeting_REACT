@@ -1,3 +1,10 @@
 body {
   background-color: #f96386;
 }
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

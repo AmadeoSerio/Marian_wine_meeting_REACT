@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { getProductos, getVarietal } from "../../asyncmock";
 import { useParams } from 'react-router-dom';
 import ItemList from "../ItemList/ItemList.jsx"
 import { db } from '../../services/config.js';
@@ -8,6 +7,21 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
+  const alertaError = (event) => {
+    (Swal.fire({
+        title: 'Los emails ingresados no coinciden',
+        html: `` + error,
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Entendido',
+        background: "#721414",
+        color: "#eeee",
+        confirmButtonColor: "#05121b",
+    })); event.preventDefault()
+};
+
+  const [error, setError] = useState("");
+
   const img = "http://drive.google.com/uc?export=view&id=1ipeT161_1BPgyOdxuGi1M3vfFW6x6TR9"
 
   const [productos, setProductos] = useState([])
@@ -16,16 +30,16 @@ const ItemListContainer = ({ greeting }) => {
 
   useEffect(() => {
     const misProductos = varietalCategoria ? query(collection(db, "inventario"), where("varietal", "==", varietalCategoria)) : collection(db, "inventario");
-    
+
     getDocs(misProductos)
-    .then(res => {
-      const nuevosProductos = res.docs.map(doc => {
-        const data = doc.data()
-        return {id:doc.id, ...data}
+      .then(res => {
+        const nuevosProductos = res.docs.map(doc => {
+          const data = doc.data()
+          return { id: doc.id, ...data }
+        })
+        setProductos(nuevosProductos);
       })
-      setProductos(nuevosProductos);
-    })
-    .catch (error => console.log(error));///////////////////////////////////////////OJO ACÁ
+      .catch(error => setError("Se ha producido un error", error));
   }, [varietalCategoria])
 
   return (
@@ -36,6 +50,10 @@ const ItemListContainer = ({ greeting }) => {
       </div>
 
       <ItemList productos={productos} />
+
+      {
+        error && (alertaError())
+      }
     </>
   )
 }

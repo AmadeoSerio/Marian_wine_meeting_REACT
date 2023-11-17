@@ -6,11 +6,24 @@ import { getDoc, doc } from "firebase/firestore";
 import './ItemDetailContainer.css'
 
 
-
 const ItemDetailContainer = () => {
+  const alertaError = (event) => {
+    (Swal.fire({
+      title: 'Los emails ingresados no coinciden',
+      html: `` + error,
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Entendido',
+      background: "#721414",
+      color: "#eeee",
+      confirmButtonColor: "#05121b",
+    })); event.preventDefault()
+  };
+
+  const [error, setError] = useState("");
 
   const [producto, setProducto] = useState(null);
-  
+
   const { idItem } = useParams();
 
 
@@ -23,13 +36,17 @@ const ItemDetailContainer = () => {
         const nuevosProducto = { id: res.id, ...data }
         setProducto(nuevosProducto);
       })
-      .catch(error => console.log(error));
+      .catch(error => setError("Se ha producido un error", error));
   }, [idItem])
 
 
   return (
     <div className="itemDetailContainer">
       <ItemDetail {...producto} />
+
+      {
+        error && (alertaError())
+      }
     </div>
   )
 }

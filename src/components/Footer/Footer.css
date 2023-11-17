@@ -1,0 +1,33 @@
+.footer{
+    background-color: #f94707;
+    height: 7rem;
+}
+
+.imgLogo{
+    height: 4.5rem;
+}
+
+.imgWine{
+    height: 3rem;
+}
+
+.aSinDeco{
+    text-decoration: none !important;
+}
+
+.fa-instagram{
+    font-size: 2.5rem;
+    color: #fafafa;
+    margin-right: 1rem;
+}
+
+.fa-tiktok{
+    font-size: 2.5rem;
+    color: #fafafa;
+    margin-right: 1rem;
+}
+
+.fa-envelope{
+    font-size: 2.5rem;
+    color: #fafafa;
+}
