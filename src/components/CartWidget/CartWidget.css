@@ -3,7 +3,12 @@
     font-size: 2rem;
     cursor: pointer;
     color: #ffff;
+    transition: .5s;
     z-index: 1;
+}
+
+.cart:hover {
+    color: #481f4f;
 }
 
 .cartCounter {

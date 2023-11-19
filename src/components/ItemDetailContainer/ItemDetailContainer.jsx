@@ -7,17 +7,17 @@ import './ItemDetailContainer.css'
 
 
 const ItemDetailContainer = () => {
-  const alertaError = (event) => {
+  const alertaError = () => {
     (Swal.fire({
       title: 'Los emails ingresados no coinciden',
       html: `` + error,
       showCancelButton: false,
-      confirmButtonColor: '#3085d6',
       confirmButtonText: 'Entendido',
       background: "#721414",
       color: "#eeee",
       confirmButtonColor: "#05121b",
-    })); event.preventDefault()
+      width: '50rem',
+    }));
   };
 
   const [error, setError] = useState("");

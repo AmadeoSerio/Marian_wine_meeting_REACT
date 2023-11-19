@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import "./Item.css"
 
 const Item = ({ nombre, varietal, precio, img, id, stock }) => {
+
     return (
         <div className='cardProducto'>
             <img src={img} alt={nombre} />

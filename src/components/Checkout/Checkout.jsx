@@ -24,12 +24,12 @@ const Checkout = () => {
             title: '¡Gracias por comprar! Tu número de orden es: ',
             html: `` + ordenId,
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
             confirmButtonText: 'Volver al inicio',
             background: "#f94707",
             color: "#eeee",
             confirmButtonColor: "#05121b",
             allowOutsideClick: false,
+            width: '50rem',
         }).then((result) => {
             if (result.isConfirmed) {
                 window.location = "/";
@@ -41,11 +41,11 @@ const Checkout = () => {
         (Swal.fire({
             title: 'Por favor completa todos los campos para continuar',
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
             confirmButtonText: 'Entendido',
             background: "#f94707",
             color: "#eeee",
             confirmButtonColor: "#05121b",
+            width: '50rem',
         }));
     };
 
@@ -53,11 +53,11 @@ const Checkout = () => {
         (Swal.fire({
             title: 'Los emails ingresados no coinciden',
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
             confirmButtonText: 'Entendido',
             background: "#f94707",
             color: "#eeee",
             confirmButtonColor: "#05121b",
+            width: '50rem',
         }));
     };
 
@@ -66,11 +66,11 @@ const Checkout = () => {
             title: 'Los emails ingresados no coinciden',
             html: `` + error,
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
             confirmButtonText: 'Entendido',
             background: "#721414",
             color: "#eeee",
             confirmButtonColor: "#05121b",
+            width: '50rem',
         }));
     };
 

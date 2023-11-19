@@ -7,11 +7,9 @@ const Counter = ({ stock, inicial, funcionAgregar }) => {
         (Swal.fire({
             title: 'Agregado al carrito',
             showCancelButton: false,
-            confirmButtonColor: '#3085d6',
             confirmButtonText: 'Entendido',
             background: "#bf3300",
             color: "#eeee",
-            allowOutsideClick: true,
             confirmButtonColor: "#05121b",
             toast: true,
             position: 'top-end',

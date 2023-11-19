@@ -19,15 +19,27 @@
     font-size: 2.5rem;
     color: #fafafa;
     margin-right: 1rem;
+    transition: .6s;
+}
+.fa-instagram:hover {
+    color: #481f4f;
 }
 
 .fa-tiktok{
     font-size: 2.5rem;
     color: #fafafa;
     margin-right: 1rem;
+    transition: .6s;
+}
+.fa-tiktok:hover {
+    color: #481f4f;
 }
 
 .fa-envelope{
     font-size: 2.5rem;
     color: #fafafa;
+    transition: .6s;
+}
+.fa-envelope:hover {
+    color: #481f4f;
 }
